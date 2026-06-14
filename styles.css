@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #111827;
+  color: white;
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.links a {
+  display: inline-block;
+  margin: 0.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.project-card {
+  background: white;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+a {
+  color: #1d4ed8;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #555;
+}
