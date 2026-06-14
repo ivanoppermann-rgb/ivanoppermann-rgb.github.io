@@ -3,67 +3,359 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ivan Oppermann | Software Developer</title>
+
+  <title>Ivan Oppermann | Computer Science Student</title>
+
+  <meta
+    name="description"
+    content="Portfolio website for Ivan Oppermann, a Computer Science student focused on software development, databases, secure programming, and practical software projects."
+  />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header class="hero">
-    <h1>Ivan Oppermann</h1>
-    <p>Computer science student building practical software projects.</p>
-    <div class="links">
-      <a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a>
-      <a href="mailto:YOUR-EMAIL@example.com">Email</a>
-    </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="#top">Ivan Oppermann</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#coursework">Coursework</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Projects</h2>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <p class="eyebrow">Computer Science Student · Software Development · Practical Tools</p>
 
-      <article class="project-card">
-        <h3>Project Name</h3>
-        <p>Short description of what the project does, what problem it solves, and what you learned.</p>
-        <p><strong>Tech:</strong> Java, Git, CLI</p>
-        <a href="https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO">View Repository</a>
-      </article>
+        <h1>Building reliable software through projects, coursework, and consistent practice.</h1>
 
-      <article class="project-card">
-        <h3>Another Project</h3>
-        <p>Short description of the project.</p>
-        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-        <a href="https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO">View Repository</a>
-      </article>
+        <p class="hero-text">
+          I am a Computer Science student at the University of Central Missouri, focused on
+          software development, databases, secure programming, systems, and practical automation.
+          I am currently building my portfolio around useful tools, clean code, and steady progress.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button secondary" href="https://github.com/ivanoppermann-rgb" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a class="button secondary" href="assets/Ivan-Oppermann-Resume.pdf" target="_blank" rel="noreferrer">
+            Resume
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Java</li>
-        <li>Python</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Git and GitHub</li>
-      </ul>
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="section-label">About</p>
+        <h2>Software development student with real-world work experience.</h2>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <p>
+            I am pursuing a Bachelor of Science in Computer Science with a Software Development
+            option. My academic work has covered Java, Python, SQL, C, UNIX/Linux command line
+            tools, C#/.NET, databases, operating systems, software engineering, secure programming,
+            testing, and cybersecurity fundamentals.
+          </p>
+
+          <p>
+            Outside of coursework, I have worked in customer-facing, operational, training, and
+            fraud investigation roles. Those jobs strengthened my reliability, communication,
+            accuracy, documentation habits, and ability to learn systems under pressure.
+          </p>
+        </div>
+
+        <aside class="quick-facts" aria-label="Quick facts">
+          <h3>Quick Facts</h3>
+
+          <ul>
+            <li><strong>Degree:</strong> B.S. Computer Science</li>
+            <li><strong>Option:</strong> Software Development</li>
+            <li><strong>School:</strong> University of Central Missouri</li>
+            <li><strong>Expected Graduation:</strong> Fall 2026</li>
+            <li><strong>Focus:</strong> Java, Python, SQL, C#/.NET, secure software</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
-    <section>
-      <h2>About</h2>
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <p class="section-label">Projects</p>
+        <h2>Current and developing work.</h2>
+        <p>
+          These projects show my current direction: practical tools, software engineering process,
+          file handling, automation, and clean implementation.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="status in-progress">In Development</span>
+            <span class="project-type">Personal Project</span>
+          </div>
+
+          <h3>Large Image Collection Organizer</h3>
+
+          <p>
+            A Java-based tool concept for organizing large image collections, including collections
+            stored inside ZIP files. The goal is to practice file processing, project structure,
+            CLI design, and maintainable software engineering habits.
+          </p>
+
+          <ul class="project-details">
+            <li>Focus: file organization, ZIP handling, automation</li>
+            <li>Planned: command-line interface and repeatable workflows</li>
+            <li>Learning: Java architecture, testing, documentation, Git workflow</li>
+          </ul>
+
+          <div class="tech-list">
+            <span>Java</span>
+            <span>Git</span>
+            <span>CLI</span>
+            <span>File I/O</span>
+          </div>
+
+          <a class="text-link" href="https://github.com/ivanoppermann-rgb" target="_blank" rel="noreferrer">
+            View GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="status live">Live</span>
+            <span class="project-type">Portfolio</span>
+          </div>
+
+          <h3>Personal Portfolio Website</h3>
+
+          <p>
+            A static portfolio website built to present my background, coursework, projects, and
+            resume in a clean, resume-ready format. This site is deployed with GitHub Pages.
+          </p>
+
+          <ul class="project-details">
+            <li>Focus: semantic HTML, responsive CSS, accessibility basics</li>
+            <li>Hosting: GitHub Pages</li>
+            <li>Learning: deployment, branch workflow, portfolio writing</li>
+          </ul>
+
+          <div class="tech-list">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>GitHub Pages</span>
+          </div>
+
+          <a class="text-link" href="https://github.com/ivanoppermann-rgb/ivanoppermann-rgb.github.io" target="_blank" rel="noreferrer">
+            View Repository
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline">
+            <span class="status planned">Building</span>
+            <span class="project-type">Coursework / Practice</span>
+          </div>
+
+          <h3>Database and Software Engineering Practice</h3>
+
+          <p>
+            A developing collection of coursework-based and self-directed practice related to
+            database design, SQL, software engineering, testing, and secure development.
+          </p>
+
+          <ul class="project-details">
+            <li>Focus: SQL, database theory, application structure</li>
+            <li>Planned: small documented examples and project writeups</li>
+            <li>Learning: translating coursework into demonstrable work</li>
+          </ul>
+
+          <div class="tech-list">
+            <span>SQL</span>
+            <span>Java</span>
+            <span>Python</span>
+            <span>Testing</span>
+          </div>
+
+          <a class="text-link" href="https://github.com/ivanoppermann-rgb" target="_blank" rel="noreferrer">
+            View GitHub
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <p class="section-label">Skills</p>
+        <h2>Technical skills I am actively developing.</h2>
+      </div>
+
+      <div class="skill-grid">
+        <article class="skill-card">
+          <h3>Programming</h3>
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>C# / .NET</li>
+            <li>C</li>
+            <li>SQL</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Software Development</h3>
+          <ul>
+            <li>Object-oriented programming</li>
+            <li>Data structures</li>
+            <li>Algorithms</li>
+            <li>Software engineering principles</li>
+            <li>Testing and quality assurance</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Systems and Security</h3>
+          <ul>
+            <li>UNIX/Linux command line</li>
+            <li>Operating systems concepts</li>
+            <li>Secure programming</li>
+            <li>Computer systems administration</li>
+            <li>Cybersecurity fundamentals</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Professional Strengths</h3>
+          <ul>
+            <li>Documentation</li>
+            <li>Customer support</li>
+            <li>Data accuracy</li>
+            <li>Training</li>
+            <li>Reliability under pressure</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="coursework">
+      <div class="section-heading">
+        <p class="section-label">Coursework</p>
+        <h2>Relevant Computer Science coursework.</h2>
+      </div>
+
+      <div class="coursework-list">
+        <span>Software Engineering</span>
+        <span>Database Theory and Applications</span>
+        <span>Operating Systems</span>
+        <span>Programming Languages</span>
+        <span>Data Structures</span>
+        <span>Discrete Structures</span>
+        <span>Algorithm Design and Analysis</span>
+        <span>Advanced Application Programming in Java</span>
+        <span>Application Programming in C# and .NET</span>
+        <span>C and UNIX Environment</span>
+        <span>Secure Programming</span>
+        <span>Secure Software Engineering</span>
+        <span>Software Testing and Quality Assurance</span>
+        <span>Computer Systems Administration</span>
+        <span>Introduction to Cryptography</span>
+        <span>Introduction to Cybersecurity</span>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading">
+        <p class="section-label">Experience</p>
+        <h2>Work history that supports my technical growth.</h2>
+        <p>
+          My work background includes customer service, fraud investigation, inventory operations,
+          training, documentation, and high-volume environments while completing a Computer Science degree.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div>
+            <h3>Grocery Associate</h3>
+            <p class="timeline-meta">Dillons · 2025 – Present</p>
+          </div>
+
+          <p>
+            Support daily store operations, freight handling, inventory movement, equipment use,
+            product organization, and customer-facing work while balancing full-time academic progress.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <h3>Fraud Investigation Agent</h3>
+            <p class="timeline-meta">TTEC · Remote · 2020 – 2021</p>
+          </div>
+
+          <p>
+            Investigated fraud-related customer issues, handled high-volume interactions, reviewed
+            account information, documented cases, and worked with confidentiality and accuracy.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <h3>Certified Team Trainer</h3>
+            <p class="timeline-meta">Pilot Flying J / Subway · 2024 – 2025</p>
+          </div>
+
+          <p>
+            Trained new employees, followed operational procedures, supported customer service, and
+            maintained quality and consistency in a fast-paced workplace.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading">
+        <p class="section-label">Contact</p>
+        <h2>Connect with me.</h2>
+      </div>
+
       <p>
-        I am a computer science student focused on learning software engineering by building useful,
-        working projects. I am interested in tools, automation, file organization, and practical systems.
+        I am building my portfolio and looking for opportunities to keep growing as a software developer.
       </p>
-    </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>
-        Find my work on <a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a>
-        or contact me by email.
-      </p>
+      <div class="contact-links">
+        <a class="button primary" href="mailto:ivanoppermann@gmail.com">Email Me</a>
+        <a class="button secondary" href="https://github.com/ivanoppermann-rgb" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a class="button secondary" href="assets/Ivan-Oppermann-Resume.pdf" target="_blank" rel="noreferrer">
+          Resume
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Ivan Oppermann</p>
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ivan Oppermann. Built with HTML, CSS, JavaScript, Git, and GitHub Pages.</p>
   </footer>
 
   <script src="script.js"></script>
