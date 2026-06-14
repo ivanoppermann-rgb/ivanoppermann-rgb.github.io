@@ -425,16 +425,18 @@
         <div class="contact-heading">
           <h2>Contact Me</h2>
 
-          <div class="contact-direct" aria-label="Direct contact links">
+          <div class="contact-direct" aria-label="Direct contact information">
+            <p>
+              <strong>Name:</strong>
+              <span>Ivan Oppermann</span>
+            </p>
             <p>
               <strong>Email:</strong>
               <a href="mailto:ivanoppermann@gmail.com">ivanoppermann@gmail.com</a>
-              <span aria-hidden="true">||</span>
-              <a href="https://github.com/ivanoppermann-rgb" target="_blank" rel="noreferrer">github.com/ivanoppermann-rgb</a>
             </p>
             <p>
-              <strong>Availability:</strong>
-              Software development opportunities, internships, project feedback, and practical collaboration.
+              <strong>Phone:</strong>
+              <a href="tel:+15734692853">573-469-2853</a>
             </p>
           </div>
 
@@ -443,7 +445,17 @@
           </p>
         </div>
 
-        <form class="contact-form" id="contact-form">
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formsubmit.co/ivanoppermann@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New portfolio contact message" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://ivanoppermann-rgb.github.io/#contact" />
+          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" />
+
           <div class="contact-fields">
             <label class="sr-only" for="contact-name">Your Name</label>
             <input id="contact-name" name="name" type="text" placeholder="Your Name *" autocomplete="name" required />
@@ -461,8 +473,6 @@
           </div>
 
           <button class="contact-submit" type="submit">Send Message</button>
-
-          <p class="copy-status contact-form-status" id="contact-form-status" aria-live="polite"></p>
         </form>
       </div>
     </section>

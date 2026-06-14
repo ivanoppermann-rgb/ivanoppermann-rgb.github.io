@@ -60,11 +60,6 @@ const modalNext = document.querySelector("#modal-next");
 const modalTags = document.querySelector("#modal-tags");
 const modalLink = document.querySelector("#modal-link");
 
-const copyEmailButton = document.querySelector("#copy-email");
-const copyStatus = document.querySelector("#copy-status");
-const contactForm = document.querySelector("#contact-form");
-const contactFormStatus = document.querySelector("#contact-form-status");
-
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
@@ -124,22 +119,5 @@ if (modalClose && modal) {
     if (modalBox && !modalBox.contains(event.target)) {
       modal.close();
     }
-  });
-}
-
-if (copyEmailButton && copyStatus) {
-  copyEmailButton.addEventListener("click", async () => {
-    const email = "ivanoppermann@gmail.com";
-
-    try {
-      await navigator.clipboard.writeText(email);
-      copyStatus.textContent = "Email copied to clipboard.";
-    } catch (error) {
-      copyStatus.textContent = email;
-    }
-
-    window.setTimeout(() => {
-      copyStatus.textContent = "";
-    }, 3000);
   });
 }

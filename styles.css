@@ -680,12 +680,16 @@ a {
 }
 
 .contact-direct p {
-  margin: 0.25rem 0;
+  margin: 0.28rem 0;
   color: #f8fafc;
 }
 
 .contact-direct strong {
   color: #f8fafc;
+}
+
+.contact-direct span {
+  color: var(--contact-accent);
 }
 
 .contact-direct a {
@@ -788,10 +792,8 @@ a {
   color: var(--green);
 }
 
-.contact-form-status {
-  grid-column: 1 / -1;
-  margin: 0.6rem 0 0;
-  font-family: Arial, Helvetica, sans-serif;
+.form-honey {
+  display: none !important;
 }
 
 .sr-only {
@@ -910,8 +912,7 @@ a {
     max-width: 620px;
   }
 
-  .contact-submit,
-  .contact-form-status {
+  .contact-submit {
     grid-column: auto;
   }
 }
