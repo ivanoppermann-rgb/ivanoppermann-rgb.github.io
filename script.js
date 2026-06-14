@@ -7,9 +7,9 @@ const projects = {
     approach:
       "This site uses a static GitHub Pages setup with semantic HTML, responsive CSS, and lightweight JavaScript. The design is structured like a developer console to make the portfolio feel more technical without adding unnecessary backend complexity.",
     current:
-      "The site is live, the resume is linked, and the contact actions are functional. The next improvement is stronger project documentation.",
+      "The site is live and being redesigned into a more project-focused developer portfolio.",
     next:
-      "Add specific project repositories, improve README files, and turn each project card into a real case study.",
+      "Add a cleaned resume PDF, improve project writeups, and link each project card to stronger repositories as they mature.",
     tags: ["HTML", "CSS", "JavaScript", "Git", "GitHub Pages"],
     link: "https://github.com/ivanoppermann-rgb/ivanoppermann-rgb.github.io"
   },
@@ -22,7 +22,7 @@ const projects = {
     approach:
       "The planned tool will focus on safe file traversal, ZIP inspection, clear output rules, and a command-line workflow. The goal is to practice maintainable Java design rather than throw together a fragile script.",
     current:
-      "The project is early-stage. The useful work right now is defining the problem, designing the workflow, and turning it into a clean Java project.",
+      "The project is still early-stage. The current value is in defining the problem, designing the workflow, and turning it into a git-worthy Java project.",
     next:
       "Create a command-line prototype that scans a folder, detects image files, reads ZIP contents, and prints an organized report before moving or renaming anything.",
     tags: ["Java", "CLI", "File I/O", "ZIP Handling", "Testing"],
@@ -44,8 +44,6 @@ const projects = {
     link: "https://github.com/ivanoppermann-rgb"
   }
 };
-
-const emailAddress = "ivanoppermann@gmail.com";
 
 const yearElement = document.querySelector("#year");
 const navToggle = document.querySelector("#nav-toggle");
@@ -125,21 +123,17 @@ if (modalClose && modal) {
       modal.close();
     }
   });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.open) {
-      modal.close();
-    }
-  });
 }
 
 if (copyEmailButton && copyStatus) {
   copyEmailButton.addEventListener("click", async () => {
+    const email = "ivanoppermann@gmail.com";
+
     try {
-      await navigator.clipboard.writeText(emailAddress);
+      await navigator.clipboard.writeText(email);
       copyStatus.textContent = "Email copied to clipboard.";
     } catch (error) {
-      copyStatus.textContent = emailAddress;
+      copyStatus.textContent = email;
     }
 
     window.setTimeout(() => {
@@ -147,57 +141,3 @@ if (copyEmailButton && copyStatus) {
     }, 3000);
   });
 }
-
-const revealTargets = document.querySelectorAll(
-  ".section, .terminal-card, .project-row, .stack-card, .timeline-card, .build-card"
-);
-
-revealTargets.forEach((target) => {
-  target.classList.add("reveal");
-});
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.12
-  }
-);
-
-revealTargets.forEach((target) => {
-  revealObserver.observe(target);
-});
-
-const sections = document.querySelectorAll("section[id]");
-const navAnchors = document.querySelectorAll(".nav-links a");
-
-const activeSectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      const activeId = entry.target.getAttribute("id");
-
-      navAnchors.forEach((anchor) => {
-        const href = anchor.getAttribute("href");
-        anchor.classList.toggle("active", href === `#${activeId}`);
-      });
-    });
-  },
-  {
-    rootMargin: "-35% 0px -55% 0px",
-    threshold: 0
-  }
-);
-
-sections.forEach((section) => {
-  activeSectionObserver.observe(section);
-});
