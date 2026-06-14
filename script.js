@@ -127,17 +127,30 @@ if (modalClose && modal) {
 
 if (copyEmailButton && copyStatus) {
   copyEmailButton.addEventListener("click", async () => {
-    const email = "ivanoppermann@gmail.com";
-
     try {
-      await navigator.clipboard.writeText(email);
-      copyStatus.textContent = "Email copied to clipboard.";
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(emailAddress);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = emailAddress;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
+
+      copyStatus.textContent = "Email copied: " + emailAddress;
+      copyEmailButton.textContent = "Copied";
     } catch (error) {
-      copyStatus.textContent = email;
+      copyStatus.textContent = "Copy failed. Email: " + emailAddress;
     }
 
     window.setTimeout(() => {
       copyStatus.textContent = "";
+      copyEmailButton.textContent = "Copy Email";
     }, 3000);
   });
 }
