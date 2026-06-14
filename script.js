@@ -62,6 +62,8 @@ const modalLink = document.querySelector("#modal-link");
 
 const copyEmailButton = document.querySelector("#copy-email");
 const copyStatus = document.querySelector("#copy-status");
+const contactForm = document.querySelector("#contact-form");
+const contactFormStatus = document.querySelector("#contact-form-status");
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
@@ -127,30 +129,45 @@ if (modalClose && modal) {
 
 if (copyEmailButton && copyStatus) {
   copyEmailButton.addEventListener("click", async () => {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(emailAddress);
-      } else {
-        const textArea = document.createElement("textarea");
-        textArea.value = emailAddress;
-        textArea.style.position = "fixed";
-        textArea.style.left = "-9999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textArea);
-      }
+    const email = "ivanoppermann@gmail.com";
 
-      copyStatus.textContent = "Email copied: " + emailAddress;
-      copyEmailButton.textContent = "Copied";
+    try {
+      await navigator.clipboard.writeText(email);
+      copyStatus.textContent = "Email copied to clipboard.";
     } catch (error) {
-      copyStatus.textContent = "Copy failed. Email: " + emailAddress;
+      copyStatus.textContent = email;
     }
 
     window.setTimeout(() => {
       copyStatus.textContent = "";
-      copyEmailButton.textContent = "Copy Email";
     }, 3000);
+  });
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:ivanoppermann@gmail.com?subject=${subject}&body=${body}`;
+
+    if (contactFormStatus) {
+      contactFormStatus.textContent = "Opening your email client. If nothing opens, email me directly at ivanoppermann@gmail.com.";
+    }
   });
 }
