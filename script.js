@@ -62,6 +62,8 @@ const modalLink = document.querySelector("#modal-link");
 
 const copyEmailButton = document.querySelector("#copy-email");
 const copyStatus = document.querySelector("#copy-status");
+const contactForm = document.querySelector("#contact-form");
+const contactFormStatus = document.querySelector("#contact-form-status");
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
@@ -127,30 +129,17 @@ if (modalClose && modal) {
 
 if (copyEmailButton && copyStatus) {
   copyEmailButton.addEventListener("click", async () => {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(emailAddress);
-      } else {
-        const textArea = document.createElement("textarea");
-        textArea.value = emailAddress;
-        textArea.style.position = "fixed";
-        textArea.style.left = "-9999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textArea);
-      }
+    const email = "ivanoppermann@gmail.com";
 
-      copyStatus.textContent = "Email copied: " + emailAddress;
-      copyEmailButton.textContent = "Copied";
+    try {
+      await navigator.clipboard.writeText(email);
+      copyStatus.textContent = "Email copied to clipboard.";
     } catch (error) {
-      copyStatus.textContent = "Copy failed. Email: " + emailAddress;
+      copyStatus.textContent = email;
     }
 
     window.setTimeout(() => {
       copyStatus.textContent = "";
-      copyEmailButton.textContent = "Copy Email";
     }, 3000);
   });
 }

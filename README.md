@@ -1,28 +1,21 @@
-# Ivan Oppermann Portfolio
+# Portfolio contact replacement
 
-Personal software development portfolio for Ivan Oppermann.
+These are full replacements for the GitHub Pages portfolio files:
 
-Live site:
+- index.html
+- styles.css
+- script.js
 
-https://ivanoppermann-rgb.github.io
+Use them on your dev branch:
 
-## Purpose
+```bash
+git checkout dev-branch
+cp /path/to/replacements/index.html ./index.html
+cp /path/to/replacements/styles.css ./styles.css
+cp /path/to/replacements/script.js ./script.js
+git add index.html styles.css script.js
+git commit -m "Redesign contact section"
+git push origin dev-branch
+```
 
-This site presents my background as a Computer Science student focused on software development, databases, secure programming, systems, and practical software projects.
-
-## Built With
-
-- HTML
-- CSS
-- JavaScript
-- Git
-- GitHub Pages
-
-## Sections
-
-- About
-- Projects
-- Technical Stack
-- Coursework
-- Experience
-- Contact
+The contact form is static-site safe. It builds a `mailto:` link with the entered name, email, phone, and message.
